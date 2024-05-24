@@ -1,0 +1,113 @@
+[gd_scene load_steps=24 format=3 uid="uid://b7popdtm7hbu3"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_sx12j"]
+[ext_resource type="PackedScene" uid="uid://dtkwimwcii2xg" path="res://scenes/bullet.tscn" id="2_gn3ip"]
+[ext_resource type="Texture2D" uid="uid://b52bqmupcbsrc" path="res://art/sprites/player/survivor-move_rifle_0.png" id="2_tnyus"]
+[ext_resource type="Texture2D" uid="uid://dtk45esvt401r" path="res://art/sprites/player/survivor-move_rifle_1.png" id="3_a8kar"]
+[ext_resource type="Texture2D" uid="uid://clnlskhk3hav4" path="res://art/sprites/player/survivor-move_rifle_2.png" id="4_nafds"]
+[ext_resource type="Texture2D" uid="uid://0gwnpg4v63c5" path="res://art/sprites/player/survivor-move_rifle_3.png" id="5_5shfh"]
+[ext_resource type="Texture2D" uid="uid://gf3d15wab5qg" path="res://art/sprites/player/survivor-move_rifle_4.png" id="6_0ikjj"]
+[ext_resource type="Texture2D" uid="uid://k4bkso38a8xn" path="res://art/sprites/player/survivor-move_rifle_5.png" id="7_kt81d"]
+[ext_resource type="Texture2D" uid="uid://dm8eudd18h86c" path="res://art/sprites/player/survivor-move_rifle_6.png" id="8_qjtho"]
+[ext_resource type="Texture2D" uid="uid://b6smf055wevl3" path="res://art/sprites/player/survivor-move_rifle_7.png" id="9_n78rp"]
+[ext_resource type="Texture2D" uid="uid://bpkvibb7jcg6f" path="res://art/sprites/player/survivor-move_rifle_8.png" id="10_owmm6"]
+[ext_resource type="Texture2D" uid="uid://cyvkref77f4br" path="res://art/sprites/player/survivor-move_rifle_9.png" id="11_46y5o"]
+[ext_resource type="Texture2D" uid="uid://vnb2qqd8h381" path="res://art/sprites/player/survivor-move_rifle_10.png" id="12_0x0mg"]
+[ext_resource type="Texture2D" uid="uid://qythpq7lue7m" path="res://art/sprites/player/survivor-move_rifle_11.png" id="13_b022o"]
+[ext_resource type="Texture2D" uid="uid://dvx8eek5vncvg" path="res://art/sprites/player/survivor-move_rifle_12.png" id="14_5dj21"]
+[ext_resource type="Texture2D" uid="uid://6i1m8vkcer7m" path="res://art/sprites/player/survivor-move_rifle_13.png" id="15_u6m5j"]
+[ext_resource type="Texture2D" uid="uid://dlbw86iclcnyj" path="res://art/sprites/player/survivor-move_rifle_14.png" id="16_lrgst"]
+[ext_resource type="Texture2D" uid="uid://d1w6vxevbr1ty" path="res://art/sprites/player/survivor-move_rifle_15.png" id="17_hgwy2"]
+[ext_resource type="Texture2D" uid="uid://dmveudm20lbae" path="res://art/sprites/player/survivor-move_rifle_16.png" id="18_62etd"]
+[ext_resource type="Texture2D" uid="uid://cj4yk52l2n546" path="res://art/sprites/player/survivor-move_rifle_17.png" id="19_ofokh"]
+[ext_resource type="Texture2D" uid="uid://c71uwwa3kdm3m" path="res://art/sprites/player/survivor-move_rifle_18.png" id="20_02twj"]
+[ext_resource type="Texture2D" uid="uid://bthicjrigwqow" path="res://art/sprites/player/survivor-move_rifle_19.png" id="21_8pipe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hr3tt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tnyus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a8kar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nafds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5shfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0ikjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kt81d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qjtho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n78rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_owmm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_46y5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0x0mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b022o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5dj21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_u6m5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lrgst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hgwy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_62etd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ofokh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_02twj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8pipe")
+}],
+"loop": true,
+"name": &"move",
+"speed": 20.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_sx12j")
+bullet_scene = ExtResource("2_gn3ip")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(31.3501, 464.866)
+rotation = -0.124239
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_hr3tt")
+animation = &"move"
+frame_progress = 0.310913
+offset = Vector2(33.7173, -626.295)
+
+[node name="GunBarrelPosition" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(167.481, -578.131)
+rotation = 0.124239
+scale = Vector2(1.33333, 1.33333)
+
+[node name="Camera2D" type="Camera2D" parent="."]

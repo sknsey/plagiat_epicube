@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://glnjtdoy1vt2"]
+
+[ext_resource type="Texture2D" uid="uid://cplh6gwgmqy3r" path="res://art/sprites/rond.png" id="1_k47mq"]
+[ext_resource type="Script" path="res://scenes/punching_bag.gd" id="1_uuyco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxbn0"]
+radius = 69.1158
+
+[node name="PunchingBag" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_uuyco")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k47mq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qxbn0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
